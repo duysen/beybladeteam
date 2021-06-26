@@ -3,7 +3,7 @@ let G = 7; // gravitational force
 let mu = 0.001; // friction
 let stadium;
 let bey1, bey2;
-let rpmConst = 120;
+let rpmConst = 400;
 
 let beyNumStr1, beyNumStr2;
 
@@ -75,41 +75,41 @@ function setup() {
 	angleMode(RADIANS);
 
 	let beyList1 = [
-		new Bey(tops[0], rings[0], drivers[0]),
-		new Bey(tops[1], rings[1], drivers[1]),
-		new Bey(tops[2], rings[2], drivers[2]),
-		new Bey(tops[3], rings[3], drivers[3]),
-		new Bey(tops[4], rings[4], drivers[4]),
-		new Bey(tops[5], rings[5], drivers[5]),
-		new Bey(tops[6], rings[6], drivers[6]),
-		new Bey(tops[7], rings[7], drivers[7]),
-		new Bey(tops[8], rings[8], drivers[8]),
-		new Bey(tops[9], rings[9], drivers[9]),
-		new Bey(tops[10], rings[10], drivers[10]),
-		new Bey(tops[11], rings[11], drivers[11]),
-		new Bey(tops[12], rings[12], drivers[12]),
-		new Bey(tops[13], rings[13], drivers[13]),
-		new Bey(tops[14], rings[14], drivers[14]),
-		new Bey(tops[15], rings[15], drivers[15])
+		new Bey(tops[0], rings[3], drivers[8]),
+		new Bey(tops[1], rings[14], drivers[14]),
+		new Bey(tops[2], rings[12], drivers[0]),
+		new Bey(tops[3], rings[8], drivers[9]),
+		new Bey(tops[4], rings[5], drivers[7]),
+		new Bey(tops[5], rings[2], drivers[3]),
+		new Bey(tops[6], rings[15], drivers[1]),
+		new Bey(tops[7], rings[6], drivers[11]),
+		new Bey(tops[8], rings[11], drivers[12]),
+		new Bey(tops[9], rings[0], drivers[13]),
+		new Bey(tops[10], rings[13], drivers[6]),
+		new Bey(tops[11], rings[1], drivers[10]),
+		new Bey(tops[12], rings[9], drivers[5]),
+		new Bey(tops[13], rings[4], drivers[15]),
+		new Bey(tops[14], rings[7], drivers[4]),
+		new Bey(tops[15], rings[10], drivers[2])
 	];
 
 	let beyList2 = [
-		new Bey(tops[0], rings[0], drivers[0]),
-		new Bey(tops[1], rings[1], drivers[1]),
-		new Bey(tops[2], rings[2], drivers[2]),
-		new Bey(tops[3], rings[3], drivers[3]),
-		new Bey(tops[4], rings[4], drivers[4]),
-		new Bey(tops[5], rings[5], drivers[5]),
-		new Bey(tops[6], rings[6], drivers[6]),
-		new Bey(tops[7], rings[7], drivers[7]),
-		new Bey(tops[8], rings[8], drivers[8]),
-		new Bey(tops[9], rings[9], drivers[9]),
-		new Bey(tops[10], rings[10], drivers[10]),
-		new Bey(tops[11], rings[11], drivers[11]),
-		new Bey(tops[12], rings[12], drivers[12]),
-		new Bey(tops[13], rings[13], drivers[13]),
-		new Bey(tops[14], rings[14], drivers[14]),
-		new Bey(tops[15], rings[15], drivers[15]),
+		new Bey(tops[0], rings[3], drivers[8]),
+		new Bey(tops[1], rings[14], drivers[14]),
+		new Bey(tops[2], rings[12], drivers[0]),
+		new Bey(tops[3], rings[8], drivers[9]),
+		new Bey(tops[4], rings[5], drivers[7]),
+		new Bey(tops[5], rings[2], drivers[3]),
+		new Bey(tops[6], rings[15], drivers[1]),
+		new Bey(tops[7], rings[6], drivers[11]),
+		new Bey(tops[8], rings[11], drivers[12]),
+		new Bey(tops[9], rings[0], drivers[13]),
+		new Bey(tops[10], rings[13], drivers[6]),
+		new Bey(tops[11], rings[1], drivers[10]),
+		new Bey(tops[12], rings[9], drivers[5]),
+		new Bey(tops[13], rings[4], drivers[15]),
+		new Bey(tops[14], rings[7], drivers[4]),
+		new Bey(tops[15], rings[10], drivers[2])
 	];
 
 	stadium = new Stadium();
