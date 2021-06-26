@@ -67,6 +67,13 @@ class Bey {
 
   	this.vel.setHeading(newVect.heading());
   	this.vel.mult(0.9);
+
+    // EARN DAMAGE WHEN HIT BORDER
+    let HToCenter = p5.Vector.mult(centerToH, -1);
+    let angle = this.vel.angleBetween(HToCenter);
+    let absAngle = PI / 2 - abs(angle);
+
+    this.health -= map(absAngle, 0, PI / 2, 0, 500);
   }
 
   friction() {
@@ -106,20 +113,29 @@ class Bey {
   }
 
   attack(other) {
-  	let rand = random(0.75, 1.26);
-  	let damage = (this.atk - other.def) * rand;
-
-    if (rand > 1.25) {
-      other.broughtOut = true;
-    }
-
-    other.prevHealth = other.health;
-  	other.health -= damage;
 
     let distVect = p5.Vector.sub(this.pos, other.pos);
     let newVel = p5.Vector.add(this.vel, distVect).setMag(this.vel.mag() * 2);
     //this.vel.setHeading(newVel.heading()).mult(2);
     this.applyForce(newVel);
+
+    //let rand = random(0.75, 1.26);
+    let rand = 0;
+    let reverseDistVect = p5.Vector.mult(distVect, -1);
+
+    if (abs(this.vel.angleBetween(reverseDistVect)) <= PI / 2) {
+      rand = random(1, 1.26);
+    } else {
+      rand = random(0.75, 1);
+    }
+    let damage = (this.atk - other.def) * rand;
+
+    if (rand > 1.25778) {
+      other.broughtOut = true;
+    }
+
+    other.prevHealth = other.health;
+    other.health -= damage;
   }
 
   checkDeath() {
