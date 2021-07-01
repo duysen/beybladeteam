@@ -130,8 +130,22 @@ class Bey {
     }
     let damage = (this.atk - other.def) * rand;
 
-    if (rand > 1.25778) {
+    /*if (rand > 1.25778) {
       other.broughtOut = true;
+    }*/
+
+    if (this.stm > other.stm) {
+      if (rand > 1.25926) {
+        other.broughtOut = true;
+      }
+    } else if (this.stm < other.stm) {
+      if (rand > 1.25976) {
+        other.broughtOut = true;
+      }
+    } else {
+      if (rand > 1.25952) {
+        other.broughtOut = true;
+      }
     }
 
     other.prevHealth = other.health;
