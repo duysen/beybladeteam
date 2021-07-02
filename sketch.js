@@ -117,8 +117,14 @@ function setup() {
 	//bey1 = beyList1[parseInt(prompt("Enter bey 1 number: (0 ~ 15)", "0"), 10)];
 	//bey2 = beyList2[parseInt(prompt("Enter bey 2 number: (0 ~ 15)", "1"), 10)];
 
-	bey1 = new Bey(tops[parseInt(prompt("Enter bey 1 top number: (0 ~ 15)", "0"), 10)], rings[parseInt(prompt("Enter bey 1 ring number: (0 ~ 15)", "0"), 10)], drivers[parseInt(prompt("Enter bey 1 driver number: (0 ~ 15)", "0"), 10)]);
-	bey2 = new Bey(tops[parseInt(prompt("Enter bey 2 top number: (0 ~ 15)", "1"), 10)], rings[parseInt(prompt("Enter bey 2 ring number: (0 ~ 15)", "1"), 10)], drivers[parseInt(prompt("Enter bey 1 driver number: (0 ~ 15)", "1"), 10)]);
+	//bey1 = new Bey(tops[parseInt(prompt("Enter bey 1 top number: (0 ~ 15)", "0"), 10)], rings[parseInt(prompt("Enter bey 1 ring number: (0 ~ 15)", "0"), 10)], drivers[parseInt(prompt("Enter bey 1 driver number: (0 ~ 15)", "0"), 10)]);
+	//bey2 = new Bey(tops[parseInt(prompt("Enter bey 2 top number: (0 ~ 15)", "1"), 10)], rings[parseInt(prompt("Enter bey 2 ring number: (0 ~ 15)", "1"), 10)], drivers[parseInt(prompt("Enter bey 1 driver number: (0 ~ 15)", "1"), 10)]);
+
+	let input1 = getPartNum(prompt("bey 1: top_ring_driver", "0 0 0"));
+	let input2 = getPartNum(prompt("bey 2: top_ring_driver", "1 1 1"));
+
+	bey1 = new Bey(tops[input1[0]], rings[input1[1]], drivers[input1[2]]);
+	bey2 = new Bey(tops[input2[0]], rings[input2[1]], drivers[input2[2]]);
 
 	// initial bey 1
 	bey1.pos = createPos(0); bey1.vel = createVector(bey1.pos.x - 0, bey1.pos.y - 250).setMag(14);
@@ -300,9 +306,5 @@ function getPartNum(str) {
 	ring = parseInt(str.slice(spaceIndex1 + 1, spaceIndex2), 10);
 	driver = parseInt(str.slice(spaceIndex2 + 1), 10);
 
-	return {
-		top: top,
-		ring: ring,
-		driver: driver
-	}
+	return [top, ring, driver]
 }
