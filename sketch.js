@@ -28,7 +28,7 @@ let tops = [
 
 let rings = [
 	new Ring(86, 11, 13, 2322, 32.4, [205, 92, 92, "Corona - A1"]),
-	new Ring(68, 10, 16, 2322, 27.6, [0, 206, 209, "Sagitarius - A2"]),
+	new Ring(68, 10, 16, 2322, 27.6, [0, 206, 209, "Sagittarius - A2"]),
 	new Ring(75, 11, 15, 2322, 30, [255, 102, 0, "Thunderclap - A3"]),
 	new Ring(60, 11, 16, 2322, 30, [123, 104, 238, "Capricorn - A4"]),
 	new Ring(60, 25, 18, 3690, 32.2, [0, 191, 255, "Colorful - D1"]),
