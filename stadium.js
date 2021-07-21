@@ -17,6 +17,11 @@ class Stadium {
 	show() {
 		push();
 		noFill();
+		stroke(255, 0, 0, 100);
+		circle(this.pos.x, this.pos.y, this.r);
+		stroke(0, 0, 255, 100);
+		line(this.pos.x, this.pos.y - this.r, this.pos.x, this.pos.y + this.r);
+		line(this.pos.x - this.r, this.pos.y, this.pos.x + this.r, this.pos.y);
 		stroke(0, 0, 0);
 		circle(this.pos.x, this.pos.y, this.r * 2);
 		pop();
