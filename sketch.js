@@ -3,7 +3,7 @@ let G = 7; // gravitational force
 let mu = 0.001; // friction
 let stadium;
 let bey1, bey2;
-let rpmConst = 50;
+let rpmConst = 43;
 
 let beyNumStr1, beyNumStr2;
 
