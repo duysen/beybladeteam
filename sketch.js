@@ -1,3 +1,4 @@
+let version = "v4.1";
 let canvas;
 let G = 7; // gravitational force
 let mu = 0.001; // friction
@@ -215,6 +216,8 @@ function draw() {
 
 		}
 	}
+	
+	showVersion(version);
 }
 
 function createPos(x) {
@@ -286,6 +289,15 @@ function getPartNum(str) {
 	driver = parseInt(str.slice(spaceIndex2 + 1), 10);
 
 	return [top, ring, driver]
+}
+
+function showVersion(messege) {
+	push();
+	fill(0);
+	textAlign(LEFT, CENTER);
+	textSize(12);
+	text(messege, 5, 10);
+	pop();
 }
 
 function endGameScreen(messege) {
