@@ -34,7 +34,7 @@ class Bey {
 
     this.frt = 0.001; // friction
 
-    this.name = top.color[3].slice(-4, -2) + "-" + ring.color[3].slice(-3, -1) + "-" + driver.color[3].slice(-3, -1);
+    this.name = top.color[3].slice(-3, -1) + "-" + ring.color[3].slice(-3, -1) + "-" + driver.color[3].slice(-3, -1);
 	}
 
 	applyForce(force) {
