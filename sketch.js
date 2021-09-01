@@ -1,4 +1,4 @@
-let version = "v5.3";
+let version = "v5.4";
 
 let canvas;
 let G = 7; // gravitational force
