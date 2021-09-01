@@ -34,7 +34,7 @@ class Bey {
 
     this.frt = 0.001; // friction
 
-    this.name = top.color[3].slice(-2) + "-" + ring.color[3].slice(-2) + "-" + driver.color[3].slice(-2);
+    this.name = top.color[3].slice(-3, -1) + "-" + ring.color[3].slice(-3, -1) + "-" + driver.color[3].slice(-3, -1);
 	}
 
 	applyForce(force) {
@@ -79,8 +79,9 @@ class Bey {
 
     this.frt = 0.001;
     if (other.checkDeath() === 0) {
-      this.health -= map(absAngle, 0, PI / 2, 0, 500);
-      this.rpm -= map(absAngle, 0, PI / 2, 0, 50);
+      let hitSpeed = this.vel.mag();
+      this.health -= map(absAngle, 0, PI / 2, 0, 500) * map(hitSpeed, 0, 14, 0, 2);
+      this.rpm -= map(absAngle, 0, PI / 2, 0, 50) * map(hitSpeed, 0, 14, 0, 2);
     }
   }
 
@@ -144,11 +145,11 @@ class Bey {
       other.broughtOut = true;
     }*/
 
-    if (this.stm > other.stm) {
+    if (this.rpm > other.rpm) {
       if (rand > 1.25926) {
         other.broughtOut = true;
       }
-    } else if (this.stm < other.stm) {
+    } else if (this.rpm < other.rpm) {
       if (rand > 1.25976) {
         other.broughtOut = true;
       }
